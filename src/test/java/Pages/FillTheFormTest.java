@@ -1,8 +1,11 @@
 package Pages;
 
+import com.codeborne.selenide.Configuration;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class FillTheFormTest {
 
@@ -25,6 +28,13 @@ public class FillTheFormTest {
             state = "NCR",
             city = "Noida",
             pageHeader = "Thanks for submitting the form";
+
+    public void setup() {
+        //use fullscreen
+        Configuration.startMaximized = true;
+        //open("https://demoqa.com/automation-practice-form");
+        open("https://demoqa.com/automation-practice-form");
+    }
 
     public void fillTestForm() {
         //FILL OUT THE FORM

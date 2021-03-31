@@ -1,6 +1,5 @@
 package pages;
 
-import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
@@ -10,8 +9,7 @@ import java.util.Locale;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
-import static pages.FakerHelper.*;
+import static pages.Helper.*;
 
 public class FillTheFormTestFaker {
 
@@ -37,12 +35,9 @@ public class FillTheFormTestFaker {
     String city = "Noida";
     String pageHeader = "Thanks for submitting the form";
 
-    public void setup() {
-        Configuration.startMaximized = true;
-        open("https://demoqa.com/automation-practice-form");
-    }
 
-    public void fillTestForm() {
+
+    public void fillTestFormFaker() {
         //FILL OUT THE FORM
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
@@ -67,7 +62,7 @@ public class FillTheFormTestFaker {
         $("#submit").pressEnter();
     }
 
-    public void checkTestData() {
+    public void checkTestDataFaker() {
         //check the header, should be "Thanks for submitting the form"
         $("#example-modal-sizes-title-lg").shouldHave(text(pageHeader));
         //check the form elements

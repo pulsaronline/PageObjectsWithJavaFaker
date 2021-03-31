@@ -1,17 +1,20 @@
 package tests;
 
 import com.codeborne.selenide.Selenide;
+import pages.Helper;
 import pages.FillTheFormTest;
 import org.junit.jupiter.api.Test;
 
 public class StartTests {
     FillTheFormTest fillTheFormTest;
+    Helper helper;
 
-    @Test
+   @Test
    public void PageObjectTestsQueue() {
-       fillTheFormTest = new FillTheFormTest();
+        helper = new Helper();
+        helper.setup();
 
-        fillTheFormTest.setup();
+        fillTheFormTest = new FillTheFormTest();
         fillTheFormTest.fillTestForm();
         Selenide.sleep(6000);
         fillTheFormTest.checkTestData();

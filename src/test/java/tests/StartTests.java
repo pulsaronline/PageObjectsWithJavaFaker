@@ -13,10 +13,9 @@ public class StartTests {
    public void PageObjectTestsQueue() {
         helper = new Helper();
         helper.setup();
-
         fillTheFormTest = new FillTheFormTest();
+
         fillTheFormTest.fillTestForm();
-        Selenide.sleep(6000);
         fillTheFormTest.checkTestData();
     }
 }

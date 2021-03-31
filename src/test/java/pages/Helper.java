@@ -1,10 +1,10 @@
 package pages;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.ElementsCollection;
 import com.github.javafaker.Faker;
 
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class Helper {
@@ -28,12 +28,15 @@ public class Helper {
         return faker.bothify("????##@mail.ru");
     }
 
-    public static String randomHobbies() {
-        ElementsCollection hobbies = $$("#hobbiesWrapper .custom-checkbox");
-        int hobbieNumber = faker.number().numberBetween(0, hobbies.size() - 1);
-        String hobbieName = hobbies.get(hobbieNumber).text();
-        hobbies.get(hobbieNumber).click();
-        return hobbieName;
+    public static String randomHobbie() {
+        int hobbieNumber = faker.number().numberBetween(1, 3);
+        String hobbie = null;
+        switch (hobbieNumber) {
+                case 1: hobbie = "Sports"; break;
+                case 2: hobbie = "Reading"; break;
+                case 3: hobbie = "Music"; break;
+        }
+        return hobbie;
     }
 
     public static String randomYear() {
@@ -48,9 +51,9 @@ public class Helper {
 
     public static String randomMonth() {
 
-            int generateMonth = faker.number().numberBetween(1, 12);
-            String month = null;
-            switch (generateMonth) {
+        int generateMonth = faker.number().numberBetween(1, 12);
+        String month = null;
+        switch (generateMonth) {
                 case 1: month = "January"; break;
                 case 2: month = "February"; break;
                 case 3: month = "March"; break;
@@ -71,15 +74,9 @@ public class Helper {
         int genderNumber = faker.number().numberBetween(1, 3);
         String gender = null;
         switch (genderNumber) {
-            case 1:
-                gender = "Male";
-                break;
-            case 2:
-                gender = "Female";
-                break;
-            case 3:
-                gender = "Other";
-                break;
+                case 1: gender = "Male"; break;
+                case 2: gender = "Female"; break;
+                case 3: gender = "Other"; break;
         }
         return gender;
     }
@@ -98,17 +95,33 @@ public class Helper {
         int subjectsNumber = faker.number().numberBetween(1, 3);
         String subject = null;
         switch (subjectsNumber) {
-            case 1:
-                subject = "Maths";
-                break;
-            case 2:
-                subject = "Social Studies";
-                break;
-            case 3:
-                subject = "Computer Science";
-                break;
+                case 1: subject = "Maths"; break;
+                case 2: subject = "Social Studies"; break;
+                case 3: subject = "Computer Science"; break;
         }
         return subject;
     }
 
+    public static String randomState() {
+        int subjectsNumber = faker.number().numberBetween(1, 4);
+        String state = null;
+        switch (subjectsNumber) {
+                case 1: state = "NCR"; $("#state").click(); $(byText(state)).click(); break;
+                case 2: state = "Uttar Pradesh"; $("#state").click(); $(byText(state)).click(); break;
+                case 3: state = "Haryana"; $("#state").click(); $(byText(state)).click(); break;
+                case 4: state = "Rajasthan"; $("#state").click(); $(byText(state)).click(); break;
+        }
+        return state;
+    }
+
+    public static String randomCity(String state) {
+       String city = null;
+        switch (state) {
+                case "NCR": city = "Delhi"; $("#city").click(); $(byText(city)).click(); break;
+                case "Uttar Pradesh": city = "Agra"; $("#city").click(); $(byText(city)).click(); break;
+                case "Haryana": city = "Karnal"; $("#city").click(); $(byText(city)).click(); break;
+                case "Rajasthan": city = "Jaipur"; $("#city").click(); $(byText(city)).click(); break;
+        }
+        return city;
+    }
 }

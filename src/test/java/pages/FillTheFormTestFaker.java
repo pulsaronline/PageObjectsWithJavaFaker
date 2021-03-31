@@ -1,6 +1,5 @@
 package pages;
 
-import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
 
@@ -13,7 +12,7 @@ import static pages.Helper.*;
 
 public class FillTheFormTestFaker {
 
-    Faker faker = new Faker();
+    //Faker faker = new Faker();
     FakeValuesService fakeValuesSevice = new FakeValuesService(
             new Locale("ru"), new RandomService());
 
@@ -26,12 +25,11 @@ public class FillTheFormTestFaker {
     String year = randomYear();
     String day = randomDay();
     String subject = randomSubject();
-    String hobbie1 = randomHobbies();
-    String hobbie2 = randomHobbies();
+    String hobbie = randomHobbie();
     String filename = "1.png";
     String address = randomAddress();
-    String state = "NCR";
-    String city = "Noida";
+    String state = null;
+    String city = null;
     String pageHeader = "Thanks for submitting the form";
 
 
@@ -49,14 +47,15 @@ public class FillTheFormTestFaker {
         $(".react-datepicker__month").$(byText(day)).click();                       //day
         $("#subjectsContainer").click();
         $("#subjectsInput").setValue(subject).pressEnter();
-        $(byText(hobbie1)).click();
-        $(byText(hobbie2)).click();
+        $(byText(hobbie)).click();
         $("#uploadPicture").uploadFromClasspath("img/" + filename);
         $("#currentAddress").setValue(address).pressTab();
-        $("#state").click();
-        $(byText(state)).click();
-        $("#city").click();
-        $(byText(city)).click();
+        //$("#state").click();
+        //$(byText(state)).click();
+        //$("#city").click();
+        //$(byText(city)).click();
+        state = randomState();
+        city = randomCity(state);
         $("#submit").pressEnter();
     }
 
@@ -74,8 +73,7 @@ public class FillTheFormTestFaker {
                 text(month),
                 text(year),
                 text(subject),
-                text(hobbie1),
-                text(hobbie2),
+                text(hobbie),
                 text(filename),
                 text(address),
                 text(state),

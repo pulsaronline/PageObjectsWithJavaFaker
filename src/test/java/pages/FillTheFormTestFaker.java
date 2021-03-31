@@ -17,20 +17,19 @@ public class FillTheFormTestFaker {
     FakeValuesService fakeValuesSevice = new FakeValuesService(
             new Locale("ru"), new RandomService());
 
-    String firstName = faker.name().firstName();
-    String lastName = faker.name().lastName();
-    String gender = faker.dog().gender();
-    String email = faker.bothify("????##@mail.ru");
-    String phoneNumber = faker.number().digits(10);
+    String firstName = randomFirstName();
+    String lastName = randomLastName();
+    String gender = randomGender();
+    String email = randomEmail();
+    String phoneNumber = randomPhoneNumber();
     String month = randomMonth();
     String year = randomYear();
     String day = randomDay();
-    String subject1 = "Computer Science";
-    String subject2 = "Math";
+    String subject = randomSubject();
     String hobbie1 = randomHobbies();
     String hobbie2 = randomHobbies();
     String filename = "1.png";
-    String address = faker.address().fullAddress();;
+    String address = randomAddress();
     String state = "NCR";
     String city = "Noida";
     String pageHeader = "Thanks for submitting the form";
@@ -45,12 +44,11 @@ public class FillTheFormTestFaker {
         $(byText(gender)).click();
         $("#userNumber").setValue(phoneNumber);
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOptionByValue(month);    //month
-        $(".react-datepicker__year-select").selectOptionByValue(year);      //year
-        $(".react-datepicker__month").$(byText(day)).click();               //day
+        $(".react-datepicker__month-select").selectOptionContainingText(month);     //month
+        $(".react-datepicker__year-select").selectOptionByValue(year);              //year
+        $(".react-datepicker__month").$(byText(day)).click();                       //day
         $("#subjectsContainer").click();
-        $("#subjectsInput").setValue(subject1).pressEnter();
-        $("#subjectsInput").setValue(subject2).pressEnter();
+        $("#subjectsInput").setValue(subject).pressEnter();
         $(byText(hobbie1)).click();
         $(byText(hobbie2)).click();
         $("#uploadPicture").uploadFromClasspath("img/" + filename);
@@ -73,10 +71,9 @@ public class FillTheFormTestFaker {
                 text(gender),
                 text(phoneNumber),
                 text(day),
-                text("may"),
+                text(month),
                 text(year),
-                text(subject1),
-                text(subject2),
+                text(subject),
                 text(hobbie1),
                 text(hobbie2),
                 text(filename),

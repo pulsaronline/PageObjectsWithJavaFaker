@@ -1,18 +1,14 @@
 package Tests;
 
 import Pages.FillTheFormTest;
-import org.junit.jupiter.api.Test;
 
 public class StartTests {
-    FillTheFormTest FillTheFormTest;
-    
-    @Test
-   void PageObjectTestsQueue() {
-        //open target page
-        FillTheFormTest = new FillTheFormTest();
-     
-        FillTheFormTest.setup();
-        FillTheFormTest.fillTestForm();
-        FillTheFormTest.checkTestData();
+    FillTheFormTest fillTheFormTest = new FillTheFormTest();
+
+   public void PageObjectTestsQueue() {
+
+        fillTheFormTest.setup();
+        fillTheFormTest.fillTestForm();
+        fillTheFormTest.checkTestData();
     }
 }

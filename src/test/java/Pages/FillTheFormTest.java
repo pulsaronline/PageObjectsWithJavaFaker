@@ -9,10 +9,8 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class FillTheFormTest {
 
-//initialize variables
-
-    String firstName = "Jason",
-            lastName = "Born",
+     String firstName = "Leo",
+            lastName = "White",
             gender = "Male",
             email = "pulsar@hotmail.com",
             phoneNumber = "9253339898",
@@ -30,9 +28,7 @@ public class FillTheFormTest {
             pageHeader = "Thanks for submitting the form";
 
     public void setup() {
-        //use fullscreen
         Configuration.startMaximized = true;
-        //open("https://demoqa.com/automation-practice-form");
         open("https://demoqa.com/automation-practice-form");
     }
 
@@ -52,7 +48,7 @@ public class FillTheFormTest {
         $("#subjectsInput").setValue(subject2).pressEnter();
         $(byText(hobbie1)).click();
         $(byText(hobbie2)).click();
-        $("#uploadPicture").uploadFromClasspath("img/" + filename);//optimal way
+        $("#uploadPicture").uploadFromClasspath("img/" + filename);
         $("#currentAddress").setValue(address).pressTab();
         $("#state").click();
         $(byText(state)).click();

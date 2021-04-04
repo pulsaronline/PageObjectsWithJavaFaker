@@ -5,7 +5,7 @@ import com.github.javafaker.Faker;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
-public class testData {
+public class TestData {
 
     public static Faker faker = new Faker();
     /*   @BeforeAll

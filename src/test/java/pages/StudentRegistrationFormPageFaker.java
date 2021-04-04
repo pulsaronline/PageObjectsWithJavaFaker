@@ -32,8 +32,6 @@ public class StudentRegistrationFormPageFaker {
     String city = null;
     String pageHeader = "Thanks for submitting the form";
 
-
-
     public void fillTestFormFaker() {
         //FILL OUT THE FORM
         $("#firstName").setValue(firstName);

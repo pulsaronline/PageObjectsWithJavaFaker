@@ -8,9 +8,9 @@ import java.util.Locale;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-import static pages.Helper.*;
+import static tests.testData.*;
 
-public class FillTheFormTestFaker {
+public class formPageFaker {
 
     //Faker faker = new Faker();
     FakeValuesService fakeValuesSevice = new FakeValuesService(

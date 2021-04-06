@@ -8,11 +8,6 @@ import static com.codeborne.selenide.Selenide.$;
 public class TestData {
 
     public static Faker faker = new Faker();
-    /*   @BeforeAll
-    static public void setup() {
-        Configuration.startMaximized = true;
-        open("https://demoqa.com/automation-practice-form");
-    }*/
 
     public static String randomFirstName(){
         return faker.name().firstName();
@@ -32,13 +27,13 @@ public class TestData {
         switch (hobbieNumber) {
                 case 1:
                     hobbie = "Sports";
-                        break;
+                    break;
                 case 2:
                     hobbie = "Reading";
-                        break;
+                    break;
                 case 3:
                     hobbie = "Music";
-                        break;
+                    break;
         }
         return hobbie;
     }
@@ -60,40 +55,40 @@ public class TestData {
         switch (generateMonth) {
                 case 1:
                     month = "January";
-                        break;
+                    break;
                 case 2:
                     month = "February";
-                        break;
+                    break;
                 case 3:
                     month = "March";
-                        break;
+                    break;
                 case 4:
                     month = "April";
-                        break;
+                    break;
                 case 5:
                     month = "May";
-                        break;
+                    break;
                 case 6:
                     month = "June";
-                        break;
+                    break;
                 case 7:
                     month = "July";
-                        break;
+                    break;
                 case 8:
                     month = "August";
-                        break;
+                    break;
                 case 9:
                     month = "September";
-                        break;
+                    break;
                 case 10:
                     month = "October";
-                        break;
+                    break;
                 case 11:
                     month = "November";
-                        break;
+                    break;
                 case 12:
                     month = "December";
-                        break;
+                    break;
             }
             return month;
         }
@@ -104,13 +99,13 @@ public class TestData {
         switch (genderNumber) {
                 case 1:
                     gender = "Male";
-                        break;
+                    break;
                 case 2:
                     gender = "Female";
-                        break;
+                    break;
                 case 3:
                     gender = "Other";
-                        break;
+                    break;
         }
         return gender;
     }
@@ -131,13 +126,13 @@ public class TestData {
         switch (subjectsNumber) {
                 case 1:
                     subject = "Maths";
-                        break;
+                    break;
                 case 2:
                     subject = "Social Studies";
-                        break;
+                    break;
                 case 3:
                     subject = "Computer Science";
-                        break;
+                    break;
         }
         return subject;
     }
@@ -150,22 +145,22 @@ public class TestData {
                     state = "NCR";
                     $("#state").click();
                     $(byText(state)).click();
-                        break;
+                    break;
                 case 2:
                     state = "Uttar Pradesh";
                     $("#state").click();
                     $(byText(state)).click();
-                        break;
+                    break;
                 case 3:
                     state = "Haryana";
                     $("#state").click();
                     $(byText(state)).click();
-                        break;
+                    break;
                 case 4:
                     state = "Rajasthan";
                     $("#state").click();
                     $(byText(state)).click();
-                        break;
+                    break;
         }
         return state;
     }
@@ -177,22 +172,22 @@ public class TestData {
                     city = "Delhi";
                     $("#city").click();
                     $(byText(city)).click();
-                        break;
+                    break;
                 case "Uttar Pradesh":
                     city = "Agra";
                     $("#city").click();
                     $(byText(city)).click();
-                        break;
+                    break;
                 case "Haryana":
                     city = "Karnal";
                     $("#city").click();
                     $(byText(city)).click();
-                        break;
+                    break;
                 case "Rajasthan":
                     city = "Jaipur";
                     $("#city").click();
                     $(byText(city)).click();
-                        break;
+                    break;
         }
         return city;
     }

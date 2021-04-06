@@ -9,7 +9,7 @@ public class TestBase {
 
     @BeforeAll
     static public void setup() {
-        Configuration.startMaximized = true;
+        Configuration.browserSize = "1024x768";
         open("https://demoqa.com/automation-practice-form");
     }
 }

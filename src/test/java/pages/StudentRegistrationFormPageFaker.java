@@ -48,12 +48,10 @@ public class StudentRegistrationFormPageFaker {
         $(byText(hobbie)).click();
         $("#uploadPicture").uploadFromClasspath("img/" + filename);
         $("#currentAddress").setValue(address).pressTab();
-        //$("#state").click();
-        //$(byText(state)).click();
-        //$("#city").click();
-        //$(byText(city)).click();
-        state = randomState();
-        city = randomCity(state);
+        $("#state").click();
+        $(byText(state)).scrollTo().click();
+        $("#city").click();
+        $(byText(city)).scrollTo().click();
         $("#submit").pressEnter();
     }
 

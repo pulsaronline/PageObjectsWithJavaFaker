@@ -28,8 +28,8 @@ public class StudentRegistrationFormPageFaker {
     String hobbie = randomHobbie();
     String filename = "1.png";
     String address = randomAddress();
-    String state = null;
-    String city = null;
+    String state = randomState();
+    String city = randomCity(state);
     String pageHeader = "Thanks for submitting the form";
 
     public void fillTestFormFaker() {

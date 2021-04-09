@@ -2,9 +2,6 @@ package tests;
 
 import com.github.javafaker.Faker;
 
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-
 public class TestData {
 
     public static Faker faker = new Faker();
@@ -143,23 +140,15 @@ public class TestData {
         switch (subjectsNumber) {
                 case 1:
                     state = "NCR";
-                    $("#state").click();
-                    $(byText(state)).click();
                     break;
                 case 2:
                     state = "Uttar Pradesh";
-                    $("#state").click();
-                    $(byText(state)).click();
                     break;
                 case 3:
                     state = "Haryana";
-                    $("#state").click();
-                    $(byText(state)).click();
                     break;
                 case 4:
                     state = "Rajasthan";
-                    $("#state").click();
-                    $(byText(state)).click();
                     break;
         }
         return state;
@@ -170,23 +159,15 @@ public class TestData {
         switch (state) {
                 case "NCR":
                     city = "Delhi";
-                    $("#city").click();
-                    $(byText(city)).click();
                     break;
                 case "Uttar Pradesh":
                     city = "Agra";
-                    $("#city").click();
-                    $(byText(city)).click();
                     break;
                 case "Haryana":
                     city = "Karnal";
-                    $("#city").click();
-                    $(byText(city)).click();
                     break;
                 case "Rajasthan":
                     city = "Jaipur";
-                    $("#city").click();
-                    $(byText(city)).click();
                     break;
         }
         return city;
